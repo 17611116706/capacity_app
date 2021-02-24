@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/theme"
+    android:orientation="vertical"
+    tools:context=".mvp.view.fragment.MessageFragment">
+
+  <RelativeLayout
+      android:layout_width="match_parent"
+      android:layout_height="44dp">
+      <TextView
+          android:layout_marginLeft="15dp"
+          android:layout_marginTop="4dp"
+          android:layout_width="72dp"
+          android:layout_height="34dp"
+          android:text="消息"
+          android:textColor="@color/white"
+          android:textSize="24sp"
+          ></TextView>
+      <TextView
+          android:layout_marginLeft="87dp"
+          android:layout_marginTop="4dp"
+          android:layout_width="72dp"
+          android:layout_height="34dp"
+          android:gravity="center"
+          android:text="好友"
+          android:textColor="@color/white"
+          android:textSize="17dp"
+          ></TextView>
+
+      <ImageView
+          android:id="@+id/add_friends"
+          android:layout_alignParentRight="true"
+          android:src="@mipmap/src_msg_addfriends"
+          android:layout_width="18dp"
+          android:layout_height="18dp"
+          android:layout_margin="13dp"></ImageView>
+      <ImageView
+          android:layout_toLeftOf="@id/add_friends"
+          android:src="@mipmap/src_msg_search"
+          android:layout_width="18dp"
+          android:layout_height="18dp"
+          android:layout_margin="13dp"></ImageView>
+  </RelativeLayout>
+    <com.scwang.smartrefresh.layout.SmartRefreshLayout
+        android:background="@drawable/msg_list_style"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/message_list"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"></androidx.recyclerview.widget.RecyclerView>
+    </com.scwang.smartrefresh.layout.SmartRefreshLayout>
+
+
+</LinearLayout>

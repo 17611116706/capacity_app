@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="utf-8"?>
+<com.example.schoolapp.mvp.view.view.LeftSlideView
+    xmlns:android="http://schemas.android.com/apk/res/android" android:layout_width="match_parent"
+    android:layout_height="90dp">
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        >
+
+
+        <!--"设置"，"删除"按钮使用了TextView而不是Button，是因为５.０以上版本使用Button会显示在上层产出错误显示-->
+        <TextView
+            android:id="@+id/tv_set"
+            android:layout_height="106dp"
+            android:layout_width="80dp"
+            android:gravity="center"
+            android:layout_toRightOf="@+id/layout_content"
+            android:text="拉黑"
+            android:textSize="25dp"
+            android:background="@color/black_4"
+            android:textColor="@color/white"
+            />
+
+
+        <TextView
+            android:id="@+id/tv_delete"
+            android:layout_height="match_parent"
+            android:layout_width="80dp"
+            android:gravity="center"
+            android:layout_toRightOf="@+id/tv_set"
+            android:text="删 除"
+            android:textSize="25dp"
+            android:background="@color/color_FA5151"
+            android:textColor="@color/white"
+            />
+
+
+
+        <include layout="@layout/message_list_item"></include>
+
+
+
+    </RelativeLayout>
+
+</com.example.schoolapp.mvp.view.view.LeftSlideView>

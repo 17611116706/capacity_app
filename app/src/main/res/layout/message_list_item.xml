@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    android:orientation="horizontal"
+    android:id="@+id/layout_content"
+    xmlns:android="http://schemas.android.com/apk/res/android" android:layout_width="match_parent"
+    android:layout_height="90dp">
+
+    <ImageView
+        android:src="@mipmap/app_school_talk_head"
+        android:id="@+id/message_item_img"
+        android:layout_width="60dp"
+        android:layout_height="60dp"
+        android:layout_margin="15dp"
+        ></ImageView>
+
+    <LinearLayout
+        android:orientation="vertical"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+      <LinearLayout
+          android:layout_width="match_parent"
+          android:layout_height="89dp">
+          <LinearLayout
+              android:orientation="vertical"
+              android:layout_width="0dp"
+              android:layout_weight="1"
+              android:layout_height="match_parent">
+              <TextView
+                  android:text="AAA"
+                  android:id="@+id/message_name"
+                  android:textColor="@color/color_728099"
+                  android:textSize="17sp"
+                  android:layout_marginTop="21.5dp"
+                  android:layout_width="wrap_content"
+                  android:layout_height="24dp"></TextView>
+              <TextView
+                  android:text="AAA"
+                  android:id="@+id/message_content"
+                  android:layout_marginTop="5dp"
+                  android:layout_width="wrap_content"
+                  android:layout_height="18dp"
+                  android:textSize="13sp"
+                  android:textColor="@color/gray_A"
+                  ></TextView>
+          </LinearLayout>
+          <TextView
+              android:id="@+id/message_time"
+              android:textSize="12sp"
+              android:textColor="@color/gray_A"
+              android:layout_marginTop="22dp"
+              android:layout_marginRight="15dp"
+              android:layout_width="33dp"
+              android:layout_height="wrap_content"></TextView>
+      </LinearLayout>
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:background="@color/gray_A"
+            ></View>
+    </LinearLayout>
+
+
+
+</LinearLayout>

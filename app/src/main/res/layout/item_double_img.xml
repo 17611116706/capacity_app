@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android" android:layout_width="345dp"
+    android:layout_height="wrap_content">
+
+    <ImageView
+        android:id="@+id/doubleimg1"
+        android:layout_width="168dp"
+        android:layout_height="168dp"></ImageView>
+    <ImageView
+        android:layout_marginLeft="8dp"
+        android:id="@+id/doubleimg2"
+        android:layout_width="168dp"
+        android:layout_height="168dp"></ImageView>
+</LinearLayout>

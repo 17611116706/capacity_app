@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    android:layout_marginBottom="10dp"
+    android:orientation="horizontal"
+    android:gravity="center_vertical"
+    xmlns:android="http://schemas.android.com/apk/res/android" android:layout_width="match_parent"
+    android:layout_height="70dp">
+
+    <RelativeLayout
+        android:layout_width="60dp"
+        android:layout_height="60dp">
+        <ImageView
+            android:id="@+id/school_talk_headimg"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"></ImageView>
+        <ImageView
+            android:id="@+id/school_talk_hostimg"
+            android:layout_width="15dp"
+            android:layout_height="15dp"></ImageView>
+    </RelativeLayout>
+    <LinearLayout
+        android:orientation="vertical"
+        android:layout_marginLeft="13dp"
+        android:layout_width="match_parent"
+        android:layout_height="66dp">
+        
+        <TextView
+            android:textSize="16sp"
+            android:textColor="@color/black_4"
+            android:id="@+id/school_talk_title"
+            android:gravity="center_vertical"
+            android:textStyle="bold"
+            android:layout_width="wrap_content"
+            android:layout_height="22dp"></TextView>
+        <TextView
+            android:textSize="12sp"
+            android:textColor="@color/gray_A"
+            android:id="@+id/school_talk_message"
+            android:gravity="center_vertical"
+            android:textStyle="bold"
+            android:layout_width="wrap_content"
+            android:layout_height="22dp"></TextView>
+        <LinearLayout
+            android:orientation="horizontal"
+            android:layout_width="match_parent"
+            android:layout_height="22dp">
+            <ImageView
+                android:id="@+id/school_talk_helpimg"
+                android:layout_width="18dp"
+                android:layout_height="18dp"
+                android:layout_margin="2dp"
+                ></ImageView>
+        <TextView
+            android:textSize="12sp"
+            android:textColor="@color/gray_A"
+            android:id="@+id/school_talk_helpcount"
+            android:gravity="center_vertical"
+            android:textStyle="bold"
+            android:layout_width="wrap_content"
+            android:layout_height="22dp"></TextView>
+        </LinearLayout>
+    </LinearLayout>
+</LinearLayout>

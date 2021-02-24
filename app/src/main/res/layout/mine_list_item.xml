@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android" android:layout_width="match_parent"
+    android:layout_height="64dp">
+
+    <ImageView
+        android:id="@+id/mine_item_img"
+        android:layout_width="24dp"
+        android:layout_height="24dp"
+        android:layout_margin="20dp"
+        ></ImageView>
+    <TextView
+        android:id="@+id/mine_item_title"
+        android:textFontWeight="400"
+        android:textColor="@color/black_4"
+        android:textSize="17dp"
+        android:text="我的钱包"
+        android:layout_gravity="center_vertical"
+        android:layout_width="wrap_content"
+        android:layout_height="24dp"></TextView>
+    <ImageView
+        android:layout_marginLeft="201dp"
+        android:src="@mipmap/src_mine_list_next"
+        android:layout_marginTop="24dp"
+        android:layout_width="16dp"
+        android:layout_height="16dp"></ImageView>
+</LinearLayout>

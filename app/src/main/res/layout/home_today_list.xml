@@ -1,0 +1,109 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    android:gravity="center"
+    xmlns:android="http://schemas.android.com/apk/res/android" android:layout_width="match_parent"
+    android:layout_height="wrap_content">
+    <LinearLayout
+        android:background="@drawable/home_today_style"
+        android:orientation="vertical"
+        android:layout_width="345dp"
+        android:layout_height="123dp">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="51dp">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="今日榜单"
+            android:textColor="@color/theme"
+            android:textSize="18sp"
+            android:layout_margin="13dp"
+            ></TextView>
+        <LinearLayout
+            android:id="@+id/home_more"
+            android:layout_marginRight="10dp"
+            android:layout_alignParentRight="true"
+            android:layout_marginTop="15.5dp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content">
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="更多"
+            android:textSize="14sp"
+            android:textColor="@color/gray"></TextView>
+        <ImageView
+            android:layout_marginTop="2dp"
+            android:layout_width="16dp"
+            android:layout_height="16dp"
+            android:src="@mipmap/src_home_next"
+            ></ImageView>
+        </LinearLayout>
+    </RelativeLayout>
+
+    <LinearLayout
+        android:gravity="center"
+        android:orientation="horizontal"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <LinearLayout
+            android:layout_marginTop="8dp"
+            android:orientation="vertical"
+            android:layout_width="0dp"
+            android:layout_weight="1"
+            android:layout_height="match_parent">
+            
+            <TextView
+                android:id="@+id/today_li1"
+                android:ellipsize="end"
+                android:lines="1"
+                android:layout_marginLeft="13dp"
+                android:text="港区政府回应"
+                android:layout_width="135dp"
+                android:layout_height="21dp"></TextView>
+            <TextView
+                android:ellipsize="end"
+                android:lines="1"
+                android:id="@+id/today_li2"
+                android:layout_marginTop="9dp"
+                android:layout_marginLeft="13dp"
+                android:text="淮大师29号再感染..."
+                android:layout_width="135dp"
+                android:layout_height="21dp"></TextView>
+        </LinearLayout>
+        <View
+            android:layout_width="1dp"
+            android:layout_height="40dp"
+            android:background="@color/gray"
+            ></View>
+        <LinearLayout
+            android:layout_marginTop="8dp"
+            android:orientation="vertical"
+            android:layout_width="0dp"
+            android:layout_weight="1"
+            android:layout_height="match_parent">
+            <TextView
+                android:ellipsize="end"
+                android:lines="1"
+                android:id="@+id/today_li3"
+                android:layout_marginLeft="24dp"
+                android:text="范冰冰发文表..."
+                android:layout_width="135dp"
+                android:layout_height="21dp"></TextView>
+            <TextView
+                android:ellipsize="end"
+                android:lines="1"
+                android:id="@+id/today_li4"
+                android:layout_marginTop="9dp"
+                android:layout_marginLeft="24dp"
+                android:text="巢湖大水淹没"
+                android:layout_width="135dp"
+                android:layout_height="21dp"></TextView>
+         </LinearLayout>
+    </LinearLayout>
+    </LinearLayout>
+
+</LinearLayout>
