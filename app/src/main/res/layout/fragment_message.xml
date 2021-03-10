@@ -5,7 +5,7 @@
     android:layout_height="match_parent"
     android:background="@color/theme"
     android:orientation="vertical"
-    tools:context=".mvp.view.fragment.MessageFragment">
+    tools:context=".mvp.ui.fragment.MessageFragment">
 
   <RelativeLayout
       android:layout_width="match_parent"

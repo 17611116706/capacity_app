@@ -1,4 +1,4 @@
-package com.example.schoolapp.mvp.view.fragment;
+package com.example.schoolapp.mvp.ui.fragment;
 
 import android.content.Context;
 import android.graphics.drawable.Drawable;

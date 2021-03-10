@@ -5,7 +5,7 @@
     android:layout_height="match_parent"
     android:orientation="vertical"
     android:background="@color/white"
-    tools:context=".mvp.view.fragment.LifeFragment">
+    tools:context=".mvp.ui.fragment.LifeFragment">
     <ScrollView
         android:layout_width="match_parent"
         android:layout_height="match_parent">
@@ -230,7 +230,7 @@
                         ></ImageView>
                 </LinearLayout>
             </RelativeLayout>
-            <com.example.schoolapp.ui.TouchRelativeLayout
+            <com.example.schoolapp.widget.TouchRelativeLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content">
             <androidx.recyclerview.widget.RecyclerView
@@ -238,7 +238,7 @@
                 android:id="@+id/school_talk_list"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"></androidx.recyclerview.widget.RecyclerView>
-            </com.example.schoolapp.ui.TouchRelativeLayout>
+            </com.example.schoolapp.widget.TouchRelativeLayout>
             <RelativeLayout
                 android:gravity="center_vertical"
                 android:layout_marginTop="22dp"
@@ -272,7 +272,7 @@
                         ></ImageView>
                 </LinearLayout>
             </RelativeLayout>
-            <com.example.schoolapp.ui.TouchRelativeLayout
+            <com.example.schoolapp.widget.TouchRelativeLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content">
                 <androidx.recyclerview.widget.RecyclerView
@@ -280,7 +280,7 @@
                     android:id="@+id/school_talk_dynamic"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"></androidx.recyclerview.widget.RecyclerView>
-            </com.example.schoolapp.ui.TouchRelativeLayout>
+            </com.example.schoolapp.widget.TouchRelativeLayout>
         </LinearLayout>
     </ScrollView>
 </LinearLayout>

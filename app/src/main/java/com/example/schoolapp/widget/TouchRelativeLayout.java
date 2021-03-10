@@ -1,4 +1,4 @@
-package com.example.schoolapp.ui;
+package com.example.schoolapp.widget;
 
 import android.content.Context;
 import android.util.AttributeSet;

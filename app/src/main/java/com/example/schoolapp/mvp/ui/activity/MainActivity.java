@@ -1,13 +1,9 @@
-package com.example.schoolapp.mvp.view.activity;
+package com.example.schoolapp.mvp.ui.activity;
 
-import androidx.appcompat.app.AppCompatActivity;
 import androidx.fragment.app.Fragment;
-import androidx.viewpager.widget.ViewPager;
 
 import android.graphics.Color;
 import android.graphics.drawable.Drawable;
-import android.os.Bundle;
-import android.os.Message;
 import android.view.View;
 import android.widget.RadioButton;
 import android.widget.RadioGroup;
@@ -16,10 +12,10 @@ import com.example.lib_core.mvp.view.activity.BaseActivity;
 import com.example.schoolapp.R;
 import com.example.schoolapp.mvp.contract.MainContract;
 import com.example.schoolapp.mvp.presenter.MainPresenter;
-import com.example.schoolapp.mvp.view.fragment.HomeFragment;
-import com.example.schoolapp.mvp.view.fragment.LifeFragment;
-import com.example.schoolapp.mvp.view.fragment.MessageFragment;
-import com.example.schoolapp.mvp.view.fragment.MineFragment;
+import com.example.schoolapp.mvp.ui.fragment.HomeFragment;
+import com.example.schoolapp.mvp.ui.fragment.LifeFragment;
+import com.example.schoolapp.mvp.ui.fragment.MessageFragment;
+import com.example.schoolapp.mvp.ui.fragment.MineFragment;
 
 import crossoverone.statuslib.StatusUtil;
 
