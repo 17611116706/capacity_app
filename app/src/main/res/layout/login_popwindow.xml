@@ -16,7 +16,7 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content">
         <ImageView
-            android:id="@+id/close_pop"
+            android:id="@+id/login_close_pop"
             android:src="@drawable/src_login_close"
             android:layout_margin="12dp"
             android:layout_width="24dp"
@@ -32,9 +32,9 @@
         android:layout_height="120dp">
         <EditText
             android:textColor="@color/color_C4C4C6"
-            android:hint="在此输入您的手机号"
+            android:hint="手机号"
             android:textSize="14sp"
-            android:id="@+id/username"
+            android:id="@+id/login_phone"
             android:background="@drawable/underline_graya"
             android:layout_width="match_parent"
             android:layout_height="60dp"></EditText>
@@ -44,36 +44,57 @@
             android:layout_height="60dp">
             <EditText
                 android:textColor="@color/color_C4C4C6"
-                android:hint="在此输入验证码"
+                android:hint="在此输入密码"
                 android:textSize="14sp"
-                android:id="@+id/phone_code"
+                android:id="@+id/login_password"
                 android:background="@color/white"
                 android:layout_width="0dp"
                 android:layout_weight="1"
                 android:layout_height="40dp"></EditText>
-            <TextView
-                android:gravity="center"
-                android:textSize="14sp"
-                android:textColor="@color/theme"
-                android:text="发送验证码"
-                android:id="@+id/send_code"
-                android:layout_width="wrap_content"
-                android:layout_height="match_parent">
-            </TextView>
         </LinearLayout>
+        </LinearLayout>
+         <LinearLayout
+             android:layout_marginTop="12dp"
+            android:gravity="center_vertical"
+            android:orientation="horizontal"
+            android:layout_width="295dp"
+            android:layout_height="17dp">
+            <TextView
+                android:id="@+id/forgot_password"
+                android:textColor="@color/color_999999"
+                android:textSize="12sp"
+                android:text="忘记密码"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"></TextView>
+             <TextView
+                 android:textColor="@color/color_999999"
+                 android:id="@+id/not_account"
+                 android:layout_marginLeft="163dp"
+                 android:textSize="12sp"
+                 android:layout_width="wrap_content"
+                 android:layout_height="wrap_content"
+                 android:text="没有账号?"
+                 ></TextView>
+             <TextView
+                 android:id="@+id/to_register"
+                 android:textColor="@color/theme"
+                 android:text="注册"
+                  android:textSize="12sp"
+                 android:layout_width="wrap_content"
+                 android:layout_height="wrap_content"></TextView>
     </LinearLayout>
     <TextView
-        android:id="@+id/pop_regist"
+        android:id="@+id/pop_login"
         android:layout_marginTop="24dp"
         android:gravity="center"
         android:textColor="@color/white"
-        android:text="注册"
+        android:text="登录"
         android:background="@drawable/login_button_style"
         android:layout_width="295dp"
         android:layout_height="48dp"></TextView>
     <LinearLayout
         android:gravity="center_vertical"
-        android:layout_marginTop="91dp"
+        android:layout_marginTop="62dp"
         android:orientation="horizontal"
         android:layout_width="295dp"
         android:layout_height="wrap_content">
@@ -102,7 +123,7 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content">
         <LinearLayout
-            android:id="@+id/wechat_login"
+            android:id="@+id/login_wechat_login"
             android:gravity="center"
             android:background="@drawable/wechat_login"
             android:layout_width="140dp"
@@ -120,7 +141,7 @@
 
         </LinearLayout>
         <LinearLayout
-            android:id="@+id/tencent_login"
+            android:id="@+id/login_tencent_login"
             android:gravity="center"
             android:background="@drawable/tencent_login"
             android:layout_marginLeft="15dp"
