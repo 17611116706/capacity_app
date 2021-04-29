@@ -6,9 +6,9 @@ import com.example.schoolapp.mvp.contract.MainContract;
 
 import javax.inject.Inject;
 
-public class LifeModle extends BaseModel implements LifeContract.LifeModel {
+public class LifeModel extends BaseModel implements LifeContract.LifeModel {
 
         @Inject
-    public LifeModle() {
+    public LifeModel() {
     }
 }

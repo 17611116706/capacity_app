@@ -31,7 +31,7 @@ public class NetWorkManager {
             builder.client(http.build());
             builder.addConverterFactory(GsonConverterFactory.create());
             builder.addCallAdapterFactory(RxJava2CallAdapterFactory.create());
-            builder.baseUrl(NerWorkApi.domin);
+            builder.baseUrl(NetWorkApi.domin);
             retrofit = builder.build();
         }
         return retrofit;

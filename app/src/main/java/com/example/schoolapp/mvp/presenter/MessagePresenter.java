@@ -1,14 +1,13 @@
 package com.example.schoolapp.mvp.presenter;
 
 import com.example.lib_core.mvp.presenter.BasePresenter;
-import com.example.lib_core.mvp.view.fragment.BaseFragment;
-import com.example.schoolapp.mvp.contract.MessaageContract;
+import com.example.schoolapp.mvp.contract.MessageContract;
 
 import javax.inject.Inject;
 
-public class MessagePresenter extends BasePresenter<MessaageContract.MessageModel,MessaageContract.MessageView> {
+public class MessagePresenter extends BasePresenter<MessageContract.MessageModel, MessageContract.MessageView> {
 
     @Inject
-    public MessagePresenter(MessaageContract.MessageModel messageModel,MessaageContract.MessageView messageView) {
+    public MessagePresenter(MessageContract.MessageModel messageModel, MessageContract.MessageView messageView) {
     }
 }

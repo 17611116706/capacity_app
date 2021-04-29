@@ -3,6 +3,8 @@ package com.example.schoolapp;
 import android.app.Application;
 import android.content.Context;
 
+import com.alibaba.android.arouter.launcher.ARouter;
+
 import me.jessyan.autosize.AutoSizeConfig;
 
 public class MyApplication extends Application {
@@ -20,5 +22,6 @@ public class MyApplication extends Application {
         AutoSizeConfig.getInstance()
                 .setDesignWidthInDp(375)
                 .setDesignHeightInDp(863);
+        ARouter.init(this);
     }
 }

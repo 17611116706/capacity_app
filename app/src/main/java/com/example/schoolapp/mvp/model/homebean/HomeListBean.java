@@ -16,6 +16,50 @@ public class HomeListBean implements MultiItemEntity {
     String commentcount;
     int type;
 
+
+    //host list
+
+    ArrayList<HostList> listNames;
+
+    public HomeListBean(int type, ArrayList<HostList> listNames) {
+        this.type = type;
+        this.listNames = listNames;
+    }
+
+    public ArrayList<HostList> getListNames() {
+        return listNames;
+    }
+
+    public void setListNames(ArrayList<HostList> listNames) {
+        this.listNames = listNames;
+    }
+
+    public class HostList{
+        String listName;
+        boolean isHost;
+
+        public HostList(String listName, boolean isHost) {
+            this.listName = listName;
+            this.isHost = isHost;
+        }
+
+        public String getListName() {
+            return listName;
+        }
+
+        public void setListName(String listName) {
+            this.listName = listName;
+        }
+
+        public boolean isHost() {
+            return isHost;
+        }
+
+        public void setHost(boolean host) {
+            isHost = host;
+        }
+    }
+
     public HomeListBean(String useravatorUrl, String name, String sendtime, String title, String message, String[] imgs, String lovecount, String commentcount) {
         this.useravatorUrl = useravatorUrl;
         this.name = name;

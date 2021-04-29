@@ -1,7 +1,11 @@
 package com.example.schoolapp.adapter;
 
 import android.content.Context;
+import android.graphics.drawable.Drawable;
+import android.view.View;
 import android.widget.ImageView;
+import android.widget.LinearLayout;
+import android.widget.TextView;
 
 import androidx.annotation.Nullable;
 
@@ -35,12 +39,13 @@ public class HomeRecyclerAdapter extends BaseMultiItemQuickAdapter<HomeListBean,
 
     @Override
     protected void convert(BaseViewHolder helper, HomeListBean item) {
-        Glide.with(mContext).load(R.drawable.resultimg).apply(RequestOptions.bitmapTransform(new RoundedCorners(40))).into((ImageView) helper.getView(R.id.home_recyclerview_item_headimg));
-        helper.setText(R.id.home_recyclerview_item_name,item.getName());
-        helper.setText(R.id.home_recyclerview_sendtime,item.getSendtime());
-        helper.setText(R.id.home_recyclerview_item_title,item.getTitle());
-        helper.setText(R.id.home_recyclerview_item_message,"\t\t\t\t\t\t\t\t\t\t\t\t\t "+item.getMessage());
-        switch (item.getItemType()){
+        int itemType = item.getItemType();
+            Glide.with(mContext).load(R.drawable.resultimg).apply(RequestOptions.bitmapTransform(new RoundedCorners(40))).into((ImageView) helper.getView(R.id.home_recyclerview_item_headimg));
+            helper.setText(R.id.home_recyclerview_item_name,item.getName());
+            helper.setText(R.id.home_recyclerview_sendtime,item.getSendtime());
+            helper.setText(R.id.home_recyclerview_item_title,item.getTitle());
+            helper.setText(R.id.home_recyclerview_item_message,"\t\t\t\t\t\t\t\t\t\t\t\t\t "+item.getMessage());
+        switch (itemType){
             case 1:
                 Glide.with(mContext).load(R.drawable.resultimg).apply(RequestOptions.bitmapTransform(new RoundedCorners(10))).into((ImageView) helper.getView(R.id.singimg));
                 break;

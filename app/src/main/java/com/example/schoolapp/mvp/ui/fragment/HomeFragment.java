@@ -3,6 +3,7 @@ package com.example.schoolapp.mvp.ui.fragment;
 import android.content.Context;
 import android.graphics.drawable.Drawable;
 
+import android.view.View;
 import android.widget.LinearLayout;
 import android.widget.TextView;
 
@@ -10,9 +11,12 @@ import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
+import com.alibaba.android.arouter.facade.annotation.Route;
+import com.alibaba.android.arouter.launcher.ARouter;
 import com.example.lib_core.mvp.view.fragment.BaseFragment;
 import com.example.schoolapp.R;
 import com.example.schoolapp.adapter.HomeRecyclerAdapter;
+import com.example.schoolapp.mvp.constants.ARouterConstants;
 import com.example.schoolapp.mvp.contract.HomeContract;
 import com.example.schoolapp.mvp.model.homebean.HomeListBean;
 import com.example.schoolapp.mvp.presenter.HomePresenter;
@@ -30,6 +34,7 @@ import com.scwang.smartrefresh.layout.listener.OnRefreshLoadMoreListener;
 
 import java.util.ArrayList;
 
+@Route(path = ARouterConstants.HomeFragment)
 public class HomeFragment extends BaseFragment<HomePresenter> implements HomeContract.HomeView {
     private LinearLayout homeMore;
     private TextView todayLi1;
@@ -80,6 +85,8 @@ public class HomeFragment extends BaseFragment<HomePresenter> implements HomeCon
         todayLi3 = (TextView) findViewById(R.id.today_li3);
         todayLi4 = (TextView) findViewById(R.id.today_li4);
         homeRcyclerViewList = (RecyclerView) findViewById(R.id.home_rcyclerView_list);
+        homeRcyclerViewList.setOverScrollMode(View.OVER_SCROLL_NEVER);
+        homeRcyclerViewList.setNestedScrollingEnabled(false);
         homeListBeans = new ArrayList<>();
 
         HomeListBean homeListBean1 = new HomeListBean("http://p1.music.126.net/yC_df5u0myXVp-bM99K3Lw==/5870292580832850.jpg","小小的太阳",
@@ -131,7 +138,12 @@ public class HomeFragment extends BaseFragment<HomePresenter> implements HomeCon
         homeListBeans.add(homeListBean2);
         homeListBeans.add(homeListBean3);
         homeListBeans.add(homeListBean4);
-        homeRcyclerViewList.setLayoutManager(new LinearLayoutManager(getContext()));
+        homeRcyclerViewList.setLayoutManager(new LinearLayoutManager(getContext()){
+            @Override
+            public boolean canScrollHorizontally() {
+                return false;
+            }
+        });
         homeRcyclerViewList.setAdapter(homeRecyclerAdapter);
         homeRecyclerAdapter.notifyDataSetChanged();
 
@@ -152,5 +164,15 @@ public class HomeFragment extends BaseFragment<HomePresenter> implements HomeCon
     @Override
     public void initData() {
 
+    }
+
+    @Override
+    public void initEvent() {
+        homeMore.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                ARouter.getInstance().build(ARouterConstants.TodayListActivity).navigation();
+            }
+        });
     }
 }

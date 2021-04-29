@@ -15,6 +15,7 @@ import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.TextView;
 
+import com.alibaba.android.arouter.facade.annotation.Route;
 import com.bumptech.glide.Glide;
 import com.bumptech.glide.load.resource.bitmap.RoundedCorners;
 import com.bumptech.glide.request.RequestOptions;
@@ -23,6 +24,7 @@ import com.example.schoolapp.R;
 import com.example.schoolapp.adapter.HomeRecyclerAdapter;
 import com.example.schoolapp.adapter.LifeChooseAdapter;
 import com.example.schoolapp.adapter.LifeSchoolTalkAdapter;
+import com.example.schoolapp.mvp.constants.ARouterConstants;
 import com.example.schoolapp.mvp.contract.LifeContract;
 import com.example.schoolapp.mvp.model.homebean.HomeListBean;
 import com.example.schoolapp.mvp.model.homebean.LifeChoostBean;
@@ -33,7 +35,7 @@ import com.youth.banner.loader.ImageLoader;
 
 import java.util.ArrayList;
 
-
+@Route(path = ARouterConstants.LifeFragment)
 public class LifeFragment extends BaseFragment<LifePresenter> implements LifeContract.LifeView {
     private TextView locationTitle;
     private EditText lifeSearch;
@@ -78,9 +80,10 @@ public class LifeFragment extends BaseFragment<LifePresenter> implements LifeCon
         lifeSearch.setCompoundDrawables(search,null,null,null);
 
         ArrayList<String> strings = new ArrayList<>();
-        strings.add("https://goss3.cfp.cn/creative/vcg/800/new/VCG211275572644.jpg");
-        strings.add("https://goss3.cfp.cn/creative/vcg/800/new/VCG211275572644.jpg");
-        strings.add("https://goss3.cfp.cn/creative/vcg/800/new/VCG211275572644.jpg");
+        strings.add("https://gimg2.baidu.com/image_search/src=http%3A%2F%2Fwww.qu4c.com%2Fuploads%2Fallimg%2F191230%2F2329456446-5.jpg&refer=http%3A%2F%2Fwww.qu4c.com&app=2002&size=f9999,10000&q=a80&n=0&g=0n&fmt=jpeg?sec=1621850763&t=fed00a68817c02be43e82deb49cfd647");
+        strings.add("https://gimg2.baidu.com/image_search/src=http%3A%2F%2Fimg.51miz.com%2Fpreview%2Fmuban%2F00%2F00%2F42%2F63%2FM-426373-EA0B4316.jpg-0.jpg&refer=http%3A%2F%2Fimg.51miz.com&app=2002&size=f9999,10000&q=a80&n=0&g=0n&fmt=jpeg?sec=1621850846&t=4e205ac91f9e89d21a62404a979a2280");
+        strings.add("https://ss3.bdstatic.com/70cFv8Sh_Q1YnxGkpoWK1HF6hhy/it/u=1986720659,1908690322&fm=26&gp=0.jpg");
+        strings.add("https://gimg2.baidu.com/image_search/src=http%3A%2F%2Fp2.qhimgs4.com%2Ft014cf3ac564e0ab687.jpg&refer=http%3A%2F%2Fp2.qhimgs4.com&app=2002&size=f9999,10000&q=a80&n=0&g=0n&fmt=jpeg?sec=1621850880&t=9b90f03848a649c5c2ec50ea9d4d064d");
         if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.LOLLIPOP) {
             lifeBanner.setOutlineProvider(new ViewOutlineProvider() {
                 @Override
@@ -102,11 +105,11 @@ public class LifeFragment extends BaseFragment<LifePresenter> implements LifeCon
         //每日精选
 
         lifeChoostBeans = new ArrayList<>();
-        lifeChoostBeans.add(new LifeChoostBean("https://avatar.csdnimg.cn/F/C/8/3_qq_38945720_1564489741.jpg","XXX兼职","暑假直聘"));
-        lifeChoostBeans.add(new LifeChoostBean("https://avatar.csdnimg.cn/F/C/8/3_qq_38945720_1564489741.jpg","XXX兼职","暑假直聘"));
-        lifeChoostBeans.add(new LifeChoostBean("https://avatar.csdnimg.cn/F/C/8/3_qq_38945720_1564489741.jpg","XXX兼职","暑假直聘"));
-        lifeChoostBeans.add(new LifeChoostBean("https://avatar.csdnimg.cn/F/C/8/3_qq_38945720_1564489741.jpg","XXX兼职","暑假直聘"));
-        lifeChoostBeans.add(new LifeChoostBean("https://avatar.csdnimg.cn/F/C/8/3_qq_38945720_1564489741.jpg","XXX兼职","暑假直聘"));
+        lifeChoostBeans.add(new LifeChoostBean("https://gimg2.baidu.com/image_search/src=http%3A%2F%2F6.pic.pc6.com%2Fup%2F2016-12%2F20161214142929118.png&refer=http%3A%2F%2F6.pic.pc6.com&app=2002&size=f9999,10000&q=a80&n=0&g=0n&fmt=jpeg?sec=1621850662&t=5a016e9fae8672227d7cceecef58399d","XXX兼职","暑假直聘"));
+        lifeChoostBeans.add(new LifeChoostBean("https://gimg2.baidu.com/image_search/src=http%3A%2F%2Fwww.huaxiaqiumei.com%2FuploadInput%2Fimage%2F20171126%2F20171126084553_31093.jpg&refer=http%3A%2F%2Fwww.huaxiaqiumei.com&app=2002&size=f9999,10000&q=a80&n=0&g=0n&fmt=jpeg?sec=1621850763&t=07db963181a4ba7ede4a34dbdd11f866","XXX兼职","暑假直聘"));
+        lifeChoostBeans.add(new LifeChoostBean("https://gimg2.baidu.com/image_search/src=http%3A%2F%2F6.pic.pc6.com%2Fup%2F2016-12%2F20161214142929118.png&refer=http%3A%2F%2F6.pic.pc6.com&app=2002&size=f9999,10000&q=a80&n=0&g=0n&fmt=jpeg?sec=1621850662&t=5a016e9fae8672227d7cceecef58399d","XXX兼职","暑假直聘"));
+        lifeChoostBeans.add(new LifeChoostBean("https://gimg2.baidu.com/image_search/src=http%3A%2F%2F6.pic.pc6.com%2Fup%2F2016-12%2F20161214142929118.png&refer=http%3A%2F%2F6.pic.pc6.com&app=2002&size=f9999,10000&q=a80&n=0&g=0n&fmt=jpeg?sec=1621850662&t=5a016e9fae8672227d7cceecef58399d","XXX兼职","暑假直聘"));
+        lifeChoostBeans.add(new LifeChoostBean("https://gimg2.baidu.com/image_search/src=http%3A%2F%2F6.pic.pc6.com%2Fup%2F2016-12%2F20161214142929118.png&refer=http%3A%2F%2F6.pic.pc6.com&app=2002&size=f9999,10000&q=a80&n=0&g=0n&fmt=jpeg?sec=1621850662&t=5a016e9fae8672227d7cceecef58399d","XXX兼职","暑假直聘"));
         lifeChooseAdapter = new LifeChooseAdapter(R.layout.life_recyclerview_choose_item,lifeChoostBeans);
         everydayChooseList.setLayoutManager(new LinearLayoutManager(getContext(),RecyclerView.HORIZONTAL,false));
         everydayChooseList.setAdapter(lifeChooseAdapter);
@@ -122,6 +125,7 @@ public class LifeFragment extends BaseFragment<LifePresenter> implements LifeCon
         schoolTalkList.setLayoutManager(new LinearLayoutManager(getContext()));
         schoolTalkList.setAdapter(lifeSchoolTalkAdapter);
         lifeSchoolTalkAdapter.notifyDataSetChanged();
+        schoolTalkList.setNestedScrollingEnabled(false);
         //校园动态
         homeListBeans = new ArrayList<>();
         HomeListBean homeListBean1 = new HomeListBean("http://p1.music.126.net/yC_df5u0myXVp-bM99K3Lw==/5870292580832850.jpg","小小的太阳",
@@ -175,6 +179,11 @@ public class LifeFragment extends BaseFragment<LifePresenter> implements LifeCon
 
     @Override
     public void initData() {
+
+    }
+
+    @Override
+    public void initEvent() {
 
     }
 }

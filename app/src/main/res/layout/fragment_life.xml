@@ -6,7 +6,7 @@
     android:orientation="vertical"
     android:background="@color/white"
     tools:context=".mvp.ui.fragment.LifeFragment">
-    <ScrollView
+    <androidx.core.widget.NestedScrollView
         android:layout_width="match_parent"
         android:layout_height="match_parent">
         <LinearLayout
@@ -230,15 +230,11 @@
                         ></ImageView>
                 </LinearLayout>
             </RelativeLayout>
-            <com.example.schoolapp.widget.TouchRelativeLayout
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content">
             <androidx.recyclerview.widget.RecyclerView
                 android:layout_margin="15dp"
                 android:id="@+id/school_talk_list"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"></androidx.recyclerview.widget.RecyclerView>
-            </com.example.schoolapp.widget.TouchRelativeLayout>
             <RelativeLayout
                 android:gravity="center_vertical"
                 android:layout_marginTop="22dp"
@@ -272,15 +268,11 @@
                         ></ImageView>
                 </LinearLayout>
             </RelativeLayout>
-            <com.example.schoolapp.widget.TouchRelativeLayout
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content">
                 <androidx.recyclerview.widget.RecyclerView
                     android:layout_margin="15dp"
                     android:id="@+id/school_talk_dynamic"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"></androidx.recyclerview.widget.RecyclerView>
-            </com.example.schoolapp.widget.TouchRelativeLayout>
         </LinearLayout>
-    </ScrollView>
+    </androidx.core.widget.NestedScrollView>
 </LinearLayout>

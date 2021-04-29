@@ -10,5 +10,7 @@ public interface IActivity {
 
     void initData();
 
+    void initEvent();
+
 
 }

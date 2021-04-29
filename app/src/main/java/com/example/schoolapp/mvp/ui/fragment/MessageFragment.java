@@ -3,16 +3,19 @@ package com.example.schoolapp.mvp.ui.fragment;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
+import com.alibaba.android.arouter.facade.annotation.Route;
 import com.example.lib_core.mvp.view.fragment.BaseFragment;
 import com.example.schoolapp.R;
 import com.example.schoolapp.adapter.MessageAdapter;
-import com.example.schoolapp.mvp.contract.MessaageContract;
+import com.example.schoolapp.mvp.constants.ARouterConstants;
+import com.example.schoolapp.mvp.contract.MessageContract;
 import com.example.schoolapp.mvp.model.messagebean.MessageListBean;
 import com.example.schoolapp.mvp.presenter.MessagePresenter;
 
 import java.util.ArrayList;
 
-public class MessageFragment extends BaseFragment<MessagePresenter> implements MessaageContract.MessageView {
+@Route(path = ARouterConstants.MessageFragment)
+public class MessageFragment extends BaseFragment<MessagePresenter> implements MessageContract.MessageView {
     private RecyclerView messageList;
     private ArrayList<MessageListBean> messageListBeans;
     private MessageAdapter messageAdapter;
@@ -45,6 +48,11 @@ public class MessageFragment extends BaseFragment<MessagePresenter> implements M
 
     @Override
     public void initData() {
+
+    }
+
+    @Override
+    public void initEvent() {
 
     }
 }

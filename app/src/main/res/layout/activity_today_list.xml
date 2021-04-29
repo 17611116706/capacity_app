@@ -1,0 +1,82 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".mvp.ui.activity.home.TodayListActivity">
+
+    <androidx.core.widget.NestedScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+        <LinearLayout
+            android:orientation="vertical"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+        <ImageView
+            android:layout_width="match_parent"
+            android:layout_height="208dp"
+            android:background="@mipmap/src_todaylist_headimg"
+            ></ImageView>
+        <androidx.recyclerview.widget.RecyclerView
+            android:paddingLeft="15dp"
+            android:paddingRight="15dp"
+            android:id="@+id/todayListActivity_list"
+            android:layout_marginTop="-15dp"
+            android:background="@drawable/home_list_style"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"></androidx.recyclerview.widget.RecyclerView>
+        <ImageView
+            android:layout_marginTop="15dp"
+            android:background="@mipmap/src_todaylist_heplmodel"
+            android:layout_gravity="center_horizontal"
+            android:layout_width="345dp"
+            android:layout_height="100dp"
+            ></ImageView>
+        </LinearLayout>
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/todayListActivity_list1"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"></androidx.recyclerview.widget.RecyclerView>
+
+
+    </androidx.core.widget.NestedScrollView>
+
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="44dp">
+        <TextView
+            android:visibility="gone"
+            android:id="@+id/todayListActivity_title"
+            android:background="@color/color_FFB859"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:text="今日榜单"
+            android:textColor="@color/white"
+            android:textSize="17sp"
+            android:gravity="center"
+            ></TextView>
+        <ImageView
+            android:id="@+id/todayListActivity_more"
+            android:layout_marginRight="15dp"
+            android:layout_centerVertical="true"
+            android:layout_alignParentRight="true"
+            android:src="@mipmap/src_todaylist_more"
+            android:layout_width="24dp"
+            android:layout_height="24dp"></ImageView>
+        <LinearLayout
+            android:id="@+id/todayListActivity_back"
+            android:gravity="center_vertical"
+            android:layout_marginLeft="16.5dp"
+            android:layout_centerVertical="true"
+            android:layout_width="24dp"
+            android:layout_height="24dp">
+            <ImageView
+                android:src="@mipmap/src_todaylist_left"
+                android:layout_width="8dp"
+                android:layout_height="16dp"></ImageView>
+        </LinearLayout>
+    </RelativeLayout>
+
+</RelativeLayout>

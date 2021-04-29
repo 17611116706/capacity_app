@@ -3,16 +3,18 @@ package com.example.schoolapp.mvp.ui.fragment;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
+import com.alibaba.android.arouter.facade.annotation.Route;
 import com.example.lib_core.mvp.view.fragment.BaseFragment;
 import com.example.schoolapp.R;
 import com.example.schoolapp.adapter.MineListAdapter;
+import com.example.schoolapp.mvp.constants.ARouterConstants;
 import com.example.schoolapp.mvp.contract.MineContract;
 import com.example.schoolapp.mvp.model.minebean.MineListBean;
 import com.example.schoolapp.mvp.presenter.MinePresenter;
 
 import java.util.ArrayList;
 
-
+@Route(path = ARouterConstants.MinFragment)
 public class MineFragment extends BaseFragment<MinePresenter> implements MineContract.MineView {
     private RecyclerView mineList;
     private ArrayList<MineListBean> mineListBeans = new ArrayList<>();
@@ -43,6 +45,11 @@ public class MineFragment extends BaseFragment<MinePresenter> implements MineCon
 
     @Override
     public void initData() {
+
+    }
+
+    @Override
+    public void initEvent() {
 
     }
 }

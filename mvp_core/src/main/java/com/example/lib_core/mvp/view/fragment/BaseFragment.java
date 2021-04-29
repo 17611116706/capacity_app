@@ -10,6 +10,7 @@ import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
 
+import com.alibaba.android.arouter.launcher.ARouter;
 import com.example.lib_core.mvp.presenter.IPresenter;
 import com.example.lib_core.mvp.view.view.IView;
 import com.example.lib_core.widget.LoadDialog;
@@ -35,9 +36,11 @@ public  abstract  class BaseFragment<P extends IPresenter> extends Fragment impl
     public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
         loadDialog = new LoadDialog(getContext());
+        ARouter.getInstance().inject(this);
         initView();
         initInjec();
         initData();
+        initEvent();
     }
 
     public <T extends View> T findViewById(@IdRes int id) {

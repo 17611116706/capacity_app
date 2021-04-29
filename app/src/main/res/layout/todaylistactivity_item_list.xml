@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android" android:layout_width="match_parent"
+    android:layout_height="48dp">
+
+    <ImageView
+        android:id="@+id/todaylist_item_helper_img"
+        android:layout_centerVertical="true"
+        android:src="@mipmap/src_todaylist_top"
+        android:layout_width="24dp"
+        android:layout_height="24dp"></ImageView>
+    <TextView
+        android:id="@+id/todaylist_item_helper_no"
+        android:gravity="center"
+        android:textSize="16sp"
+        android:textColor="@color/gray_A"
+        android:layout_centerVertical="true"
+        android:layout_width="24dp"
+        android:layout_height="24dp"></TextView>
+    <TextView
+        android:id="@+id/todaylist_item_helper_title"
+        android:layout_centerVertical="true"
+        android:layout_marginLeft="34dp"
+        android:lines="1"
+        android:ellipsize="end"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:maxWidth="200dp"
+        android:text="#河北新增20例本土确诊"
+        ></TextView>
+    <ImageView
+        android:id="@+id/todaylist_item_helper_icon"
+        android:layout_centerVertical="true"
+        android:layout_marginRight="5dp"
+        android:layout_toLeftOf="@id/todaylist_item_helper_title1"
+        android:src="@mipmap/src_life_school_talk_hosthelp"
+        android:layout_width="18dp"
+        android:layout_height="18dp"></ImageView>
+    <TextView
+        android:id="@+id/todaylist_item_helper_title1"
+        android:layout_centerVertical="true"
+        android:gravity="center"
+        android:layout_toLeftOf="@id/todaylist_item_helper_count"
+        android:textColor="@color/gray_A"
+        android:textSize="12dp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="助力："></TextView>
+    <TextView
+        android:layout_centerVertical="true"
+        android:gravity="center"
+        android:id="@+id/todaylist_item_helper_count"
+        android:layout_alignParentRight="true"
+        android:textColor="@color/gray_A"
+        android:textSize="12dp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="1.7W"></TextView>
+</RelativeLayout>

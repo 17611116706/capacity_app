@@ -8,8 +8,11 @@ import android.view.View;
 import android.widget.RadioButton;
 import android.widget.RadioGroup;
 
+import com.alibaba.android.arouter.facade.annotation.Route;
+import com.alibaba.android.arouter.launcher.ARouter;
 import com.example.lib_core.mvp.view.activity.BaseActivity;
 import com.example.schoolapp.R;
+import com.example.schoolapp.mvp.constants.ARouterConstants;
 import com.example.schoolapp.mvp.contract.MainContract;
 import com.example.schoolapp.mvp.presenter.MainPresenter;
 import com.example.schoolapp.mvp.ui.fragment.HomeFragment;
@@ -18,7 +21,9 @@ import com.example.schoolapp.mvp.ui.fragment.MessageFragment;
 import com.example.schoolapp.mvp.ui.fragment.MineFragment;
 
 import crossoverone.statuslib.StatusUtil;
+import dagger.internal.DaggerCollections;
 
+@Route(path = ARouterConstants.MainActivity)
 public class MainActivity extends BaseActivity<MainPresenter> implements MainContract.MainView, View.OnClickListener {
     private RadioButton homeTab;
     private RadioButton lifeTab;
@@ -45,10 +50,10 @@ public class MainActivity extends BaseActivity<MainPresenter> implements MainCon
     public void initView() {
         StatusUtil.setUseStatusBarColor(this, Color.parseColor("#55CBC4"));
         StatusUtil.setSystemStatus(this,false,false);
-        homeFragment = new HomeFragment();
-        lifeFragment = new LifeFragment();
-        messageFragment = new MessageFragment();
-        mineFragment = new MineFragment();
+        homeFragment = (HomeFragment) ARouter.getInstance().build(ARouterConstants.HomeFragment).navigation();
+        lifeFragment = (LifeFragment) ARouter.getInstance().build(ARouterConstants.LifeFragment).navigation();
+        messageFragment = (MessageFragment) ARouter.getInstance().build(ARouterConstants.MessageFragment).navigation();
+        mineFragment = (MineFragment) ARouter.getInstance().build(ARouterConstants.MinFragment).navigation();
 
         tabGroup = (RadioGroup) findViewById(R.id.tab_group);
 
@@ -65,44 +70,6 @@ public class MainActivity extends BaseActivity<MainPresenter> implements MainCon
                 .add(R.id.main_viewpager,mineFragment)
                 .commit();
         viewpagerChange(homeFragment);
-       tabGroup.setOnCheckedChangeListener(new RadioGroup.OnCheckedChangeListener() {
-           @Override
-           public void onCheckedChanged(RadioGroup group, int checkedId) {
-               initTab();
-               if (homeTab.isChecked()){
-                   Drawable drawable11 = getResources().getDrawable(R.drawable.src_main_home_select);
-                   drawable11.setBounds(0,0,80,80);
-                   homeTab.setCompoundDrawables(null,drawable11,null,null);
-                   viewpagerChange(homeFragment);
-                   StatusUtil.setUseStatusBarColor(MainActivity.this, Color.parseColor("#55CBC4"));
-                   StatusUtil.setSystemStatus(MainActivity.this,false,false);
-               }
-               if (lifeTab.isChecked()){
-                   Drawable drawable22 = getResources().getDrawable(R.drawable.src_main_life_select);
-                   drawable22.setBounds(0,0,80,80);
-                   lifeTab.setCompoundDrawables(null,drawable22,null,null);
-                   viewpagerChange(lifeFragment);
-                   StatusUtil.setUseStatusBarColor(MainActivity.this, Color.parseColor("#FFFFFF"));
-                   StatusUtil.setSystemStatus(MainActivity.this,false,true);
-               }
-               if (msgTab.isChecked()){
-                   Drawable drawable33 = getResources().getDrawable(R.drawable.src_main_msg_select);
-                   drawable33.setBounds(0,0,80,80);
-                   msgTab.setCompoundDrawables(null,drawable33,null,null);
-                   viewpagerChange(messageFragment);
-                   StatusUtil.setUseStatusBarColor(MainActivity.this, Color.parseColor("#55CBC4"));
-                   StatusUtil.setSystemStatus(MainActivity.this,false,false);
-               }
-               if (mineTab.isChecked()){
-                   Drawable drawable44 = getResources().getDrawable(R.drawable.src_main_mine_select);
-                   drawable44.setBounds(0,0,80,80);
-                   mineTab.setCompoundDrawables(null,drawable44,null,null);
-                   viewpagerChange(mineFragment);
-                   StatusUtil.setUseStatusBarColor(MainActivity.this, Color.parseColor("#55CBC4"));
-                   StatusUtil.setSystemStatus(MainActivity.this,false,false);
-               }
-           }
-       });
 
 
     }
@@ -120,21 +87,64 @@ public class MainActivity extends BaseActivity<MainPresenter> implements MainCon
 
     public void initTab(){
         Drawable drawable1 = getResources().getDrawable(R.drawable.src_main_home_unselect);
-        drawable1.setBounds(0,0,80,80);
+        drawable1.setBounds(0,0,60,60);
         homeTab.setCompoundDrawables(null,drawable1,null,null);
         Drawable drawable2 = getResources().getDrawable(R.drawable.src_main_life_unselect);
-        drawable2.setBounds(0,0,80,80);
+        drawable2.setBounds(0,0,60,60);
         lifeTab.setCompoundDrawables(null,drawable2,null,null);
         Drawable drawable3 = getResources().getDrawable(R.drawable.src_main_msg_unselect);
-        drawable3.setBounds(0,0,80,80);
+        drawable3.setBounds(0,0,60,60);
         msgTab.setCompoundDrawables(null,drawable3,null,null);
         Drawable drawable4 = getResources().getDrawable(R.drawable.src_main_mine_unselect);
-        drawable4.setBounds(0,0,80,80);
+        drawable4.setBounds(0,0,60,60);
         mineTab.setCompoundDrawables(null,drawable4,null,null);
     }
 
     @Override
     public void initData() {
+
+    }
+
+    @Override
+    public void initEvent() {
+        tabGroup.setOnCheckedChangeListener(new RadioGroup.OnCheckedChangeListener() {
+            @Override
+            public void onCheckedChanged(RadioGroup group, int checkedId) {
+                initTab();
+                if (homeTab.isChecked()){
+                    Drawable drawable11 = getResources().getDrawable(R.drawable.src_main_home_select);
+                    drawable11.setBounds(0,0,60,60);
+                    homeTab.setCompoundDrawables(null,drawable11,null,null);
+                    viewpagerChange(homeFragment);
+                    StatusUtil.setUseStatusBarColor(MainActivity.this, Color.parseColor("#55CBC4"));
+                    StatusUtil.setSystemStatus(MainActivity.this,false,false);
+                }
+                if (lifeTab.isChecked()){
+                    Drawable drawable22 = getResources().getDrawable(R.drawable.src_main_life_select);
+                    drawable22.setBounds(0,0,60,60);
+                    lifeTab.setCompoundDrawables(null,drawable22,null,null);
+                    viewpagerChange(lifeFragment);
+                    StatusUtil.setUseStatusBarColor(MainActivity.this, Color.parseColor("#FFFFFF"));
+                    StatusUtil.setSystemStatus(MainActivity.this,false,true);
+                }
+                if (msgTab.isChecked()){
+                    Drawable drawable33 = getResources().getDrawable(R.drawable.src_main_msg_select);
+                    drawable33.setBounds(0,0,60,60);
+                    msgTab.setCompoundDrawables(null,drawable33,null,null);
+                    viewpagerChange(messageFragment);
+                    StatusUtil.setUseStatusBarColor(MainActivity.this, Color.parseColor("#55CBC4"));
+                    StatusUtil.setSystemStatus(MainActivity.this,false,false);
+                }
+                if (mineTab.isChecked()){
+                    Drawable drawable44 = getResources().getDrawable(R.drawable.src_main_mine_select);
+                    drawable44.setBounds(0,0,60,60);
+                    mineTab.setCompoundDrawables(null,drawable44,null,null);
+                    viewpagerChange(mineFragment);
+                    StatusUtil.setUseStatusBarColor(MainActivity.this, Color.parseColor("#55CBC4"));
+                    StatusUtil.setSystemStatus(MainActivity.this,false,false);
+                }
+            }
+        });
 
     }
 

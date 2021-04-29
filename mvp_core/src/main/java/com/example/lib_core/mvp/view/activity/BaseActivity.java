@@ -4,6 +4,7 @@ import android.os.Bundle;
 
 import androidx.fragment.app.FragmentActivity;
 
+import com.alibaba.android.arouter.launcher.ARouter;
 import com.example.lib_core.mvp.presenter.IPresenter;
 import com.example.lib_core.mvp.view.view.IView;
 import com.example.lib_core.widget.LoadDialog;
@@ -21,9 +22,11 @@ public abstract class BaseActivity<P extends IPresenter> extends FragmentActivit
         super.onCreate(savedInstanceState);
         setContentView(bondLayout());
         loadDialog = new LoadDialog(this);
+        ARouter.getInstance().inject(this);
         initView();
         initInjec();
         initData();
+        initEvent();
     }
 
     @Override

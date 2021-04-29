@@ -10,4 +10,6 @@ public interface IFragment {
 
     void initData();
 
+    void initEvent();
+
 }
