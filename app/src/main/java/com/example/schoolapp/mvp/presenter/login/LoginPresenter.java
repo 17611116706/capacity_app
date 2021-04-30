@@ -2,6 +2,7 @@ package com.example.schoolapp.mvp.presenter.login;
 
 import com.example.lib_core.mvp.presenter.BasePresenter;
 import com.example.schoolapp.mvp.contract.LoginContract;
+import com.example.schoolapp.mvp.model.loginbean.LoginSuccessEntity;
 import com.example.schoolapp.mvp.model.loginbean.RegisterCodeEntity;
 import com.example.schoolapp.mvp.model.loginbean.RegisterEntity;
 import com.example.schoolapp.network.NetWorkApi;
@@ -56,6 +57,30 @@ public class LoginPresenter extends BasePresenter<LoginContract.LoginModel, Logi
             @Override
             public void onNext(@NonNull RegisterEntity registerEntity) {
                 v.getRegister(registerEntity);
+            }
+
+            @Override
+            public void onError(@NonNull Throwable e) {
+
+            }
+
+            @Override
+            public void onComplete() {
+
+            }
+        });
+    }
+
+    public void postLogin(String loginPhone_s, String loginPassword_s) {
+        m.login(NetWorkApi.login,loginPhone_s,loginPassword_s).subscribeOn(Schedulers.io()).observeOn(AndroidSchedulers.mainThread()).subscribe(new Observer<LoginSuccessEntity>() {
+            @Override
+            public void onSubscribe(@NonNull Disposable d) {
+
+            }
+
+            @Override
+            public void onNext(@NonNull LoginSuccessEntity loginSuccessEntity) {
+                v.getLogin(loginSuccessEntity);
             }
 
             @Override

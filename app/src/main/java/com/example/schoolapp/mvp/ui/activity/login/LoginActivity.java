@@ -20,22 +20,27 @@ import android.widget.PopupWindow;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.alibaba.android.arouter.facade.annotation.Route;
 import com.alibaba.android.arouter.launcher.ARouter;
 import com.example.lib_core.mvp.view.activity.BaseActivity;
 import com.example.schoolapp.R;
+import com.example.schoolapp.constants.Constants;
 import com.example.schoolapp.di.compont.DaggerLoginComponts;
 import com.example.schoolapp.di.modules.LoginModules;
 import com.example.schoolapp.mvp.constants.ARouterConstants;
 import com.example.schoolapp.mvp.contract.LoginContract;
+import com.example.schoolapp.mvp.model.loginbean.LoginSuccessEntity;
 import com.example.schoolapp.mvp.model.loginbean.RegisterCodeEntity;
 import com.example.schoolapp.mvp.model.loginbean.RegisterEntity;
 import com.example.schoolapp.mvp.presenter.login.LoginPresenter;
+import com.example.schoolapp.utils.SpUtils;
 
 import java.util.Timer;
 import java.util.TimerTask;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
+@Route(path = ARouterConstants.LoginActivity)
 public class LoginActivity extends BaseActivity<LoginPresenter> implements LoginContract.LoginView, View.OnClickListener {
 
     private TextView login;
@@ -259,7 +264,11 @@ public class LoginActivity extends BaseActivity<LoginPresenter> implements Login
                 break;
             case R.id.pop_login:
                 // 登录
-                ARouter.getInstance().build(ARouterConstants.MainActivity).navigation();
+//                ARouter.getInstance().build(ARouterConstants.MainActivity).navigation();
+                String loginPhone_s = loginPhone.getText().toString();
+                String loginPassword_s = loginPassword.getText().toString();
+
+                p.postLogin(loginPhone_s,loginPassword_s);
                 break;
             case R.id.login_wechat_login:
                 //登录 微信
@@ -324,7 +333,29 @@ public class LoginActivity extends BaseActivity<LoginPresenter> implements Login
     @Override
     public void getRegister(RegisterEntity registerEntity) {
             if (registerEntity.getCode() == 200){
-                Log.i("getRegister", "getRegister: +注册成功");
+//                SpUtils.getInstance().save(Constants.User_token,registerEntity.getToken());
+//                SpUtils.getInstance().save(Constants.User_userName,registerEntity.getData().getUserName());
+//                SpUtils.getInstance().save(Constants.User_age,registerEntity.getData().getAge());
+//                SpUtils.getInstance().save(Constants.User_sex,registerEntity.getData().getSex());
+//                SpUtils.getInstance().save(Constants.User_phone,registerEntity.getData().getPhone());
+//                SpUtils.getInstance().save(Constants.User_userNick,registerEntity.getData().getUserNick());
+//                SpUtils.getInstance().save(Constants.User_email,registerEntity.getData().getEmail());
+
+            }
+    }
+
+    @Override
+    public void getLogin(LoginSuccessEntity loginEntity) {
+            if (loginEntity.getCode() == 200){
+                SpUtils.getInstance().save(Constants.User_token,loginEntity.getToken());
+                SpUtils.getInstance().save(Constants.User_userName,loginEntity.getData().getUserName());
+                SpUtils.getInstance().save(Constants.User_age,loginEntity.getData().getAge());
+                SpUtils.getInstance().save(Constants.User_sex,loginEntity.getData().getSex());
+                SpUtils.getInstance().save(Constants.User_phone,loginEntity.getData().getPhone());
+                SpUtils.getInstance().save(Constants.User_userNick,loginEntity.getData().getUserNick());
+                SpUtils.getInstance().save(Constants.User_email,loginEntity.getData().getEmail());
+                SpUtils.getInstance().save(Constants.User_id,loginEntity.getData().getId());
+                ARouter.getInstance().build(ARouterConstants.MainActivity).navigation();
             }
     }
 }

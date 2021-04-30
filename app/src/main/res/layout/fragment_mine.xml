@@ -13,29 +13,12 @@
         android:layout_height="375dp">
         <ImageView
             android:layout_width="match_parent"
-            android:layout_height="375dp"
+            android:layout_height="match_parent"
             android:background="@mipmap/src_mine_info_bg"
-            ></ImageView>
-        <ImageView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:src="@mipmap/src_mine_info_bg1"
-            ></ImageView>
-        <ImageView
-            android:layout_alignParentRight="true"
-            android:layout_width="279dp"
-            android:layout_height="195dp"
-            android:src="@mipmap/src_mine_info_bg2"
-            ></ImageView>
-        <ImageView
-            android:layout_width="168dp"
-            android:layout_height="257dp"
-            android:src="@mipmap/src_mine_info_bg3"
-            android:layout_alignParentRight="true"
-            android:layout_alignParentBottom="true"
             ></ImageView>
     </RelativeLayout>
         <LinearLayout
+            android:paddingTop="20dp"
             android:orientation="vertical"
             android:layout_width="match_parent"
             android:layout_height="match_parent">
@@ -46,11 +29,12 @@
                     android:layout_margin="10dp"
                     android:src="@mipmap/src_mine_setting"
                     android:layout_alignParentRight="true"
-                    android:id="@+id/mine_info"
+                    android:id="@+id/mine_setting"
                     android:layout_width="24dp"
                     android:layout_height="24dp"></ImageView>
             </RelativeLayout>
         <LinearLayout
+            android:id="@+id/persion_info"
             android:layout_marginLeft="20dp"
             android:layout_marginTop="15dp"
             android:orientation="horizontal"

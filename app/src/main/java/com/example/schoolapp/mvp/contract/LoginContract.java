@@ -2,6 +2,7 @@ package com.example.schoolapp.mvp.contract;
 
 import com.example.lib_core.mvp.model.IModel;
 import com.example.lib_core.mvp.view.view.IView;
+import com.example.schoolapp.mvp.model.loginbean.LoginSuccessEntity;
 import com.example.schoolapp.mvp.model.loginbean.RegisterCodeEntity;
 import com.example.schoolapp.mvp.model.loginbean.RegisterEntity;
 
@@ -12,11 +13,13 @@ public interface LoginContract {
     interface LoginModel extends IModel {
         Observable<RegisterCodeEntity> registerCode(String methodName,String phontNumber);
         Observable<RegisterEntity> register(String methodName, String phoneCode,String phoneNumber);
+        Observable<LoginSuccessEntity> login(String methodName, String phone, String password);
     }
 
     interface LoginView extends IView{
         void getRegisterCode(RegisterCodeEntity registerCodeEntity);
         void getRegister(RegisterEntity RegisterEntity);
+        void getLogin(LoginSuccessEntity loginEntity);
     }
 
 

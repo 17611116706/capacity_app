@@ -9,6 +9,7 @@ import android.widget.TextView;
 import com.example.lib_core.mvp.view.activity.BaseActivity;
 import com.example.schoolapp.R;
 import com.example.schoolapp.mvp.contract.LoginContract;
+import com.example.schoolapp.mvp.model.loginbean.LoginSuccessEntity;
 import com.example.schoolapp.mvp.model.loginbean.RegisterCodeEntity;
 import com.example.schoolapp.mvp.model.loginbean.RegisterEntity;
 import com.example.schoolapp.mvp.presenter.login.LoginPresenter;
@@ -94,6 +95,11 @@ public class LoginSetting extends BaseActivity<LoginPresenter> implements LoginC
 
     @Override
     public void getRegister(RegisterEntity RegisterEntity) {
+
+    }
+
+    @Override
+    public void getLogin(LoginSuccessEntity loginEntity) {
 
     }
 }

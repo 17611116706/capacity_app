@@ -1,0 +1,133 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:paddingTop="20dp"
+    android:orientation="vertical"
+    android:background="@color/white"
+    tools:context=".mvp.ui.activity.mine.SettingActivity">
+
+   <LinearLayout
+       android:orientation="vertical"
+       android:layout_width="match_parent"
+       android:layout_height="match_parent">
+       <RelativeLayout
+           android:layout_width="match_parent"
+           android:layout_height="44dp">
+           <TextView
+               android:layout_width="match_parent"
+               android:layout_height="match_parent"
+               android:text="设置"
+               android:gravity="center"
+               android:textSize="17sp"
+               android:textColor="@color/black_4"
+               ></TextView>
+           <ImageView
+               android:src="@mipmap/src_login_left"
+               android:layout_centerVertical="true"
+               android:layout_marginLeft="15dp"
+               android:layout_width="24dp"
+               android:layout_height="24dp"></ImageView>
+       </RelativeLayout>
+       <!--    账号安全-->
+       <RelativeLayout
+           android:id="@+id/settingActivity_accountSafety"
+           android:padding="20dp"
+           android:layout_width="match_parent"
+           android:layout_height="64dp">
+           <TextView
+               android:textSize="17sp"
+               android:text="账号安全"
+               android:textColor="@color/black_4"
+               android:layout_width="match_parent"
+               android:layout_height="match_parent"></TextView>
+           <ImageView
+               android:layout_alignParentRight="true"
+               android:src="@mipmap/src_mine_setting_next"
+               android:layout_width="16dp"
+               android:layout_height="16dp"></ImageView>
+       </RelativeLayout>
+       <RelativeLayout
+           android:id="@+id/settingActivity_myCertification"
+           android:padding="20dp"
+           android:layout_width="match_parent"
+           android:layout_height="64dp">
+           <TextView
+               android:textSize="17sp"
+               android:text="我的认证"
+               android:textColor="@color/black_4"
+               android:layout_width="match_parent"
+               android:layout_height="match_parent"></TextView>
+           <ImageView
+               android:layout_alignParentRight="true"
+               android:src="@mipmap/src_mine_setting_next"
+               android:layout_width="16dp"
+               android:layout_height="16dp"></ImageView>
+       </RelativeLayout>
+       <RelativeLayout
+           android:id="@+id/settingActivity_clearChat"
+           android:padding="20dp"
+           android:layout_width="match_parent"
+           android:layout_height="64dp">
+           <TextView
+               android:textSize="17sp"
+               android:text="清空聊天"
+               android:textColor="@color/black_4"
+               android:layout_width="match_parent"
+               android:layout_height="match_parent"></TextView>
+           <ImageView
+               android:layout_alignParentRight="true"
+               android:src="@mipmap/src_mine_setting_next"
+               android:layout_width="16dp"
+               android:layout_height="16dp"></ImageView>
+       </RelativeLayout>
+       <RelativeLayout
+           android:id="@+id/settingActivity_about"
+           android:padding="20dp"
+           android:layout_width="match_parent"
+           android:layout_height="64dp">
+           <TextView
+               android:textSize="17sp"
+               android:text="关于"
+               android:textColor="@color/black_4"
+               android:layout_width="match_parent"
+               android:layout_height="match_parent"></TextView>
+           <ImageView
+               android:layout_alignParentRight="true"
+               android:src="@mipmap/src_mine_setting_next"
+               android:layout_width="16dp"
+               android:layout_height="16dp"></ImageView>
+       </RelativeLayout>
+   </LinearLayout>
+    <androidx.cardview.widget.CardView
+        android:id="@+id/settingActivity_logout"
+        android:layout_marginBottom="66dp"
+        android:layout_alignParentBottom="true"
+        app:cardElevation="0dp"
+        app:cardCornerRadius="10dp"
+        android:layout_width="match_parent"
+        android:layout_marginHorizontal="40dp"
+        android:layout_height="48dp">
+        <TextView
+            android:background="@color/color_FA5151"
+            android:gravity="center"
+            android:textColor="@color/white"
+            android:textSize="14sp"
+            android:text="退出登录"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"></TextView>
+    </androidx.cardview.widget.CardView>
+</RelativeLayout>
+
+
+
+
+
+
+
+
+
+
+

@@ -10,6 +10,10 @@ public interface NetWorkApi {
     public final static String getRegister = "register";
     //重置密码
     public final static String resetPwd = "resetPwd";
+    //登录
+    public final static String login = "login";
+    //退出登录
+    public final static String logout = "logout";
 
 
 }

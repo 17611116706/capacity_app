@@ -13,9 +13,11 @@ import android.widget.TextView;
 import com.alibaba.android.arouter.facade.annotation.Route;
 import com.example.lib_core.mvp.view.activity.BaseActivity;
 import com.example.schoolapp.R;
+import com.example.schoolapp.adapter.HomeRecyclerAdapter;
 import com.example.schoolapp.adapter.TodayListAdapter;
 import com.example.schoolapp.mvp.constants.ARouterConstants;
 import com.example.schoolapp.mvp.contract.HomeContract;
+import com.example.schoolapp.mvp.model.homebean.HomeListBean;
 import com.example.schoolapp.mvp.model.homebean.TodayListBean;
 import com.example.schoolapp.mvp.presenter.HomePresenter;
 
@@ -30,6 +32,11 @@ public class TodayListActivity extends BaseActivity<HomePresenter> implements Ho
     private LinearLayout todayListActivityBack;
     private ArrayList<TodayListBean> todayListBeans = new ArrayList<>();
     private TodayListAdapter todayListAdapter;
+    private RecyclerView todayListActivityList1;
+    private ArrayList<HomeListBean>  homeListBeans = new ArrayList<>();
+    private HomeRecyclerAdapter homeRecyclerAdapter;
+
+
     @Override
     public int bondLayout() {
         return R.layout.activity_today_list;
@@ -42,7 +49,7 @@ public class TodayListActivity extends BaseActivity<HomePresenter> implements Ho
 
     @Override
     public void initView() {
-
+        todayListActivityList1 = (RecyclerView) findViewById(R.id.todayListActivity_list1);
         todayListActivityList = (RecyclerView) findViewById(R.id.todayListActivity_list);
         todayListActivityTitle = (TextView) findViewById(R.id.todayListActivity_title);
         todayListActivityMore = (ImageView) findViewById(R.id.todayListActivity_more);
@@ -55,6 +62,49 @@ public class TodayListActivity extends BaseActivity<HomePresenter> implements Ho
         todayListAdapter.notifyDataSetChanged();
 
 
+        HomeListBean homeListBean1 = new HomeListBean("http://p1.music.126.net/yC_df5u0myXVp-bM99K3Lw==/5870292580832850.jpg","小小的太阳",
+                "4分钟之前","#句子、文案","要做的事情总找的出时间和机会,不要做的事情总找的出借口",new String[]{
+                "http://p1.music.126.net/yC_df5u0myXVp-bM99K3Lw==/5870292580832850.jpg",
+                "http://p1.music.126.net/yC_df5u0myXVp-bM99K3Lw==/5870292580832850.jpg",
+                "http://p1.music.126.net/yC_df5u0myXVp-bM99K3Lw==/5870292580832850.jpg"}
+                ,"456"
+                ,"179"
+                ,3
+        );
+        HomeListBean homeListBean2 = new HomeListBean("http://p1.music.126.net/yC_df5u0myXVp-bM99K3Lw==/5870292580832850.jpg","小小的太阳",
+                "4分钟之前","#句子、文案","要做的事情总找的出时间和机会,不要做的事情总找的出借口",new String[]{
+                "http://p1.music.126.net/yC_df5u0myXVp-bM99K3Lw==/5870292580832850.jpg",
+                "http://p1.music.126.net/yC_df5u0myXVp-bM99K3Lw==/5870292580832850.jpg"}
+                ,"456"
+                ,"179"
+                ,2
+        );
+        HomeListBean homeListBean3 = new HomeListBean("http://p1.music.126.net/yC_df5u0myXVp-bM99K3Lw==/5870292580832850.jpg","小小的太阳",
+                "4分钟之前","#句子、文案","要做的事情总找的出时间和机会,不要做的事情总找的出借口",new String[]{
+                "http://p1.music.126.net/yC_df5u0myXVp-bM99K3Lw==/5870292580832850.jpg"}
+                ,"456"
+                ,"179"
+                ,1
+        );
+        HomeListBean homeListBean4 = new HomeListBean("http://p1.music.126.net/yC_df5u0myXVp-bM99K3Lw==/5870292580832850.jpg","小小的太阳",
+                "4分钟之前","#句子、文案","要做的事情总找的出时间和机会,不要做的事情总找的出借口",new String[]{
+                "http://p1.music.126.net/yC_df5u0myXVp-bM99K3Lw==/5870292580832850.jpg",
+                "http://p1.music.126.net/yC_df5u0myXVp-bM99K3Lw==/5870292580832850.jpg",
+                "http://p1.music.126.net/yC_df5u0myXVp-bM99K3Lw==/5870292580832850.jpg",
+                "http://p1.music.126.net/yC_df5u0myXVp-bM99K3Lw==/5870292580832850.jpg",
+                "http://p1.music.126.net/yC_df5u0myXVp-bM99K3Lw==/5870292580832850.jpg"}
+                ,"456"
+                ,"179"
+                ,4
+        );
+        homeListBeans.add(homeListBean1);
+        homeListBeans.add(homeListBean2);
+        homeListBeans.add(homeListBean3);
+        homeListBeans.add(homeListBean4);
+        homeRecyclerAdapter = new HomeRecyclerAdapter(homeListBeans);
+        todayListActivityList1.setLayoutManager(new LinearLayoutManager(this));
+        todayListActivityList1.setAdapter(homeRecyclerAdapter);
+        homeRecyclerAdapter.notifyDataSetChanged();
     }
 
     @Override

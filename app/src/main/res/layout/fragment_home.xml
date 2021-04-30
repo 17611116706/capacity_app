@@ -5,8 +5,8 @@
     android:layout_height="match_parent"
     android:background="@color/theme"
     android:orientation="vertical"
+    android:paddingTop="20dp"
     tools:context=".mvp.ui.fragment.HomeFragment">
-
     <include layout="@layout/home_nav"></include>
     <androidx.core.widget.NestedScrollView
         android:layout_width="match_parent"

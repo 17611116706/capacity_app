@@ -13,7 +13,7 @@ public class SpUtils {
 
     public static SpUtils getInstance(){
         if (mSp==null){
-            mSp= MyApplication.getContext().getSharedPreferences("intelligence_app", Context.MODE_PRIVATE);
+            mSp= MyApplication.getContext().getSharedPreferences("intelligence_app_UserInfo", Context.MODE_PRIVATE);
         }
             return instance;
     }
@@ -39,6 +39,11 @@ public class SpUtils {
         return mSp.getInt(key,defValue);
     }
 
+
+    public void clearAll(){
+        SharedPreferences.Editor edit = mSp.edit();
+        edit.clear().commit();
+    }
 
 
 }

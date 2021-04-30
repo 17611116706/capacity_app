@@ -62,19 +62,13 @@ public class LifeFragment extends BaseFragment<LifePresenter> implements LifeCon
 
     @Override
     public void initView() {
-
-
-
-
         schoolTalkDynamic = (RecyclerView) findViewById(R.id.school_talk_dynamic);
-
         schoolTalkList = (RecyclerView) findViewById(R.id.school_talk_list);
         everydayChooseList = (RecyclerView) findViewById(R.id.everyday_choose_list);
         everyDay = (LinearLayout) findViewById(R.id.every_day);
         lifeBanner = (Banner) findViewById(R.id.life_banner);
         locationTitle = (TextView) findViewById(R.id.location_title);
         lifeSearch = (EditText) findViewById(R.id.life_search);
-
         Drawable search = getResources().getDrawable(R.mipmap.src_life_search);
         search.setBounds(0,0,60,60);
         lifeSearch.setCompoundDrawables(search,null,null,null);

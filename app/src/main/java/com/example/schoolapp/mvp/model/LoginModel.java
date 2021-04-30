@@ -1,13 +1,11 @@
 package com.example.schoolapp.mvp.model;
 
-import android.util.Log;
-
 import com.example.lib_core.mvp.model.BaseModel;
 import com.example.schoolapp.mvp.contract.LoginContract;
+import com.example.schoolapp.mvp.model.loginbean.LoginSuccessEntity;
 import com.example.schoolapp.mvp.model.loginbean.RegisterCodeEntity;
 import com.example.schoolapp.mvp.model.loginbean.RegisterEntity;
 import com.example.schoolapp.network.NetWorkManager;
-import com.google.gson.Gson;
 
 import java.util.HashMap;
 
@@ -23,18 +21,25 @@ public class LoginModel extends BaseModel implements LoginContract.LoginModel {
 
     @Override
     public Observable<RegisterCodeEntity> registerCode(String methodName, String phontNumber) {
-        HashMap<String, Object> hashMap = new HashMap<>();
+//        String s = methodName + "?" + "phone=" + phontNumber;
+        HashMap<String, String> hashMap = new HashMap<>();
         hashMap.put("phone",phontNumber);
-        String s = new Gson().toJson(hashMap);
-        return NetWorkManager.getInstance().retrofit().create(LoginServices.class).getRegisterCode(methodName,s);
+        return NetWorkManager.getInstance().retrofit().create(LoginServices.class).postRegisterCode(methodName,hashMap);
     }
 
     @Override
     public Observable<RegisterEntity> register(String methodName, String phoneCode, String phoneNumber) {
-        HashMap<String, Object> hashMap = new HashMap<>();
+        HashMap<String, String> hashMap = new HashMap<>();
         hashMap.put("code",phoneCode);
         hashMap.put("phone",phoneNumber);
-        String s = new Gson().toJson(hashMap);
-        return NetWorkManager.getInstance().retrofit().create(LoginServices.class).getRegister(methodName,s);
+        return NetWorkManager.getInstance().retrofit().create(LoginServices.class).postRegister(methodName,hashMap);
+    }
+
+    @Override
+    public Observable<LoginSuccessEntity> login(String methodName, String phone, String password) {
+        HashMap<String, String> hashMap = new HashMap<>();
+        hashMap.put("phone",phone);
+        hashMap.put("pwd",password);
+        return NetWorkManager.getInstance().retrofit().create(LoginServices.class).postLogin(methodName,hashMap);
     }
 }

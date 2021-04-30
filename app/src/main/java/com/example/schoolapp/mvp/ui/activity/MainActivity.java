@@ -48,8 +48,6 @@ public class MainActivity extends BaseActivity<MainPresenter> implements MainCon
 
     @Override
     public void initView() {
-        StatusUtil.setUseStatusBarColor(this, Color.parseColor("#55CBC4"));
-        StatusUtil.setSystemStatus(this,false,false);
         homeFragment = (HomeFragment) ARouter.getInstance().build(ARouterConstants.HomeFragment).navigation();
         lifeFragment = (LifeFragment) ARouter.getInstance().build(ARouterConstants.LifeFragment).navigation();
         messageFragment = (MessageFragment) ARouter.getInstance().build(ARouterConstants.MessageFragment).navigation();
@@ -116,7 +114,6 @@ public class MainActivity extends BaseActivity<MainPresenter> implements MainCon
                     drawable11.setBounds(0,0,60,60);
                     homeTab.setCompoundDrawables(null,drawable11,null,null);
                     viewpagerChange(homeFragment);
-                    StatusUtil.setUseStatusBarColor(MainActivity.this, Color.parseColor("#55CBC4"));
                     StatusUtil.setSystemStatus(MainActivity.this,false,false);
                 }
                 if (lifeTab.isChecked()){
@@ -124,7 +121,6 @@ public class MainActivity extends BaseActivity<MainPresenter> implements MainCon
                     drawable22.setBounds(0,0,60,60);
                     lifeTab.setCompoundDrawables(null,drawable22,null,null);
                     viewpagerChange(lifeFragment);
-                    StatusUtil.setUseStatusBarColor(MainActivity.this, Color.parseColor("#FFFFFF"));
                     StatusUtil.setSystemStatus(MainActivity.this,false,true);
                 }
                 if (msgTab.isChecked()){
@@ -132,7 +128,6 @@ public class MainActivity extends BaseActivity<MainPresenter> implements MainCon
                     drawable33.setBounds(0,0,60,60);
                     msgTab.setCompoundDrawables(null,drawable33,null,null);
                     viewpagerChange(messageFragment);
-                    StatusUtil.setUseStatusBarColor(MainActivity.this, Color.parseColor("#55CBC4"));
                     StatusUtil.setSystemStatus(MainActivity.this,false,false);
                 }
                 if (mineTab.isChecked()){
@@ -140,7 +135,6 @@ public class MainActivity extends BaseActivity<MainPresenter> implements MainCon
                     drawable44.setBounds(0,0,60,60);
                     mineTab.setCompoundDrawables(null,drawable44,null,null);
                     viewpagerChange(mineFragment);
-                    StatusUtil.setUseStatusBarColor(MainActivity.this, Color.parseColor("#55CBC4"));
                     StatusUtil.setSystemStatus(MainActivity.this,false,false);
                 }
             }
